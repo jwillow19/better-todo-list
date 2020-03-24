@@ -52,12 +52,12 @@ app.post('/', function(req, res){
 
 })
 
-
 app.get('/work', function(req, res) {
     // [*] Specify  listTitle = Work here; use ejs to set value of button to
     //  equal to listTitle (so button value changes dynamically on different paths)
     res.render('list', {listTitle: 'Work List', newEl: workItems})
 })
+
 // [*] Don't need a POST method at '/work' because the button is always
 //      directed to '/'. app.post('/') differentiates and redirects based on 
 //      button value listTitle (dynamically changes with ejs)
