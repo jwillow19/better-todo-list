@@ -15,13 +15,19 @@
         </div>
         
         <div class='box'>
+ 
+            <% newEl.forEach(function(item){ %>
+                <form action='/delete' method="POST">
+                    <div class='item'>
+                        <!-- Adding onChange and value to tap into which item was checked-->
+                        <input type="checkbox" name='checkbox' value='<%=item.name%>' onchange="this.form.submit()">
+                        <p><%= item.name %></p>
+                    </div>
+                    <input type='hidden' name='listName' value='<%=listTitle%>'></input>
+                </form>
+            <% }) %>
 
-            <% for (let iter=0; iter<newEl.length; iter++) { %>
-                <div class='item'>
-                    <input type="checkbox">
-                    <p><%= newEl[iter] %></p>
-                </div>
-            <% } %>
+
 
             <form action='/' method='POST'>
 
