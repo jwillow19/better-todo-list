@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Another TODO list</title>
+        <link rel="stylesheet" href='css/styles.css'>
+
+    </head>
+
+    <body>
+
+        <div class='box' id='heading'>
+            <h1><%=listTitle%></h1>
+        </div>
+        
+        <div class='box'>
+
+            <% for (let iter=0; iter<newEl.length; iter++) { %>
+                <div class='item'>
+                    <input type="checkbox">
+                    <p><%= newEl[iter] %></p>
+                </div>
+            <% } %>
+
+            <form action='/' method='POST'>
+
+                <input type="text" name='newItem' placeholder="TODO">
+                <!-- Using button name and value to redirect where items are added-->
+                <button type="submit" name='list' value= <%= listTitle %> > +</button> 
+            </form>
+
+        </div>
+    
+
+
+
+        
+    </body>
+
+
+
+</html>
